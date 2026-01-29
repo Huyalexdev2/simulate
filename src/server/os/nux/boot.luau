@@ -15,7 +15,8 @@ function boot.start(hardware: Folder)
         if hardwareConfig[obj.Name] == "CPU" and hardwareConfig.CPU[obj.Value].type ~= "x86_64" then
             error("CPU type not supported, rebooting...")
         else
-            bootKernel()
+            bootKernel(hardware)
+            break
         end
     end
 end
